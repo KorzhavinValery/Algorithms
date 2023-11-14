@@ -8,12 +8,13 @@ import pro.sky.algorithms.service.StringList;
 import java.util.Arrays;
 
 public class StringListImpl implements StringList {
- private  final String [] stringList;
- private int size;
+    private final String[] stringList;
+    private int size;
 
     public StringListImpl() {
-        stringList = new String[12];
+        stringList = new String[3];
     }
+
     public StringListImpl(int intSize) {
         stringList = new String[intSize];
     }
@@ -36,7 +37,7 @@ public class StringListImpl implements StringList {
             return item;
         }
         System.arraycopy(stringList, index, stringList, index + 1, size - index);
-        return  item;
+        return item;
     }
 
     @Override
@@ -84,7 +85,7 @@ public class StringListImpl implements StringList {
 
     @Override
     public int lastIndexOf(String item) {
-        for (int i = size -1; i >= 0; i--) {
+        for (int i = size - 1; i >= 0; i--) {
             if (stringList[i].equals(item)) {
                 return i;
             }
