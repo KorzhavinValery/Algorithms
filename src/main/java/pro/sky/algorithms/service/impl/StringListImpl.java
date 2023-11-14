@@ -38,37 +38,63 @@ public class StringListImpl implements StringList {
 
     @Override
     public String set(int index, String item) {
-        return null;
+        checkIndex(index);
+        checkItem(item);
+        stringList[index] = item;
+        return item;
     }
 
     @Override
     public String remove(String item) {
-        return null;
+        checkItem(item);
+        int index = indexOf(item);
+
+        return remove(index);
     }
 
     @Override
     public String remove(int index) {
-        return null;
+        checkIndex(index);
+        String item = stringList[index];
+        if (index != size) {
+            System.arraycopy(stringList, index, stringList, index, size - index);
+        }
+        size--;
+
+        return item;
     }
 
     @Override
     public boolean contains(String item) {
-        return false;
+        return indexOf(item) != -1;
     }
 
     @Override
     public int indexOf(String item) {
-        return 0;
+        for (int i = 0; i < size; i++) {
+            String s = stringList[i];
+            if (s.equals(item)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(String item) {
-        return 0;
+        for (int i = size -1; i >= 0; i--) {
+            if (stringList[i].equals(item)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public String get(int index) {
-        return null;
+        checkIndex(index);
+
+        return stringList[index];
     }
 
     @Override
