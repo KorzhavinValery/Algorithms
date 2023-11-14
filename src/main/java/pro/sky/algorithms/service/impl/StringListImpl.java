@@ -14,6 +14,9 @@ public class StringListImpl implements StringList {
     public StringListImpl() {
         stringList = new String[12];
     }
+    public StringListImpl(int intSize) {
+        stringList = new String[intSize];
+    }
 
     @Override
     public String add(String item) {
@@ -48,7 +51,6 @@ public class StringListImpl implements StringList {
     public String remove(String item) {
         checkItem(item);
         int index = indexOf(item);
-
         return remove(index);
     }
 
@@ -57,7 +59,7 @@ public class StringListImpl implements StringList {
         checkIndex(index);
         String item = stringList[index];
         if (index != size) {
-            System.arraycopy(stringList, index, stringList, index, size - index);
+            System.arraycopy(stringList, index, stringList, index, size - 1 - index);
         }
         size--;
 
