@@ -199,7 +199,7 @@ public class IntegerListImpl implements IntegerList {
         }
     }
 
-    private boolean binarySearch(Integer element) {  //работает, только если массив отсортирован
+    public boolean binarySearch(Integer element) {  //работает, только если массив отсортирован
         if (element == null) return false;
 
         int min = 0;
