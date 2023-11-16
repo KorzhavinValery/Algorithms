@@ -165,7 +165,7 @@ public class IntegerListImpl implements IntegerList {
         array[indexB] = tmp;
     }
 
-    private void sortBubble() {
+    public void sortBubble() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
@@ -175,7 +175,7 @@ public class IntegerListImpl implements IntegerList {
         }
     }
 
-    private void sortSelection() {
+    public void sortSelection() {
         for (int i = 0; i < size - 1; i++) {
             int minElementIndex = i;
             for (int j = i + 1; j < size; j++) {
@@ -187,7 +187,7 @@ public class IntegerListImpl implements IntegerList {
         }
     }
 
-    private void sortInsertion() {
+    public void sortInsertion() {
         for (int i = 1; i < size; i++) {
             Integer temp = array[i];  //строго Integer, не int. Иначе сортировка замедлится в 1,5 раза из-за переупаковки при сравнении
             int j = i;
@@ -222,7 +222,7 @@ public class IntegerListImpl implements IntegerList {
     }
 
     //из шпаргалки третьего урока
-    private void sortMerge() {
+    public void sortMerge() {
         sortMergeForArray(array, size);
     }
 
@@ -267,7 +267,7 @@ public class IntegerListImpl implements IntegerList {
         }
     }
 
-    private void sortQuick() {
+    public void sortQuick() {
         sortQuickForPartition(0, size - 1);
     }
 

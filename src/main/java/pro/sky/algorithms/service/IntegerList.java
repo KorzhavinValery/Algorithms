@@ -76,4 +76,11 @@ public interface IntegerList {
     // из строк в списке
     // и вернуть его.
     Integer[] toArray();
+    void swapElements(int indexA, int indexB);
+    void sortBubble();
+    void sortSelection();
+    void sortInsertion();
+    boolean binarySearch(Integer element);
+    void sortMerge();
+    void sortQuick();
 }
